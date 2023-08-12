@@ -1,0 +1,22 @@
+<p>users-table works!</p>
+<div class="container">
+    <p>This is  a paragraph</p>
+      <div th:if="${not #lists.isEmpty(users)}">
+          <h2>Users List</h2>
+          <table class="table table-striped">
+              <tr>
+                  <th>Id</th>
+                  <th>name</th>
+                  <th>age</th>
+                  <th>hobbies</th>
+              </tr>
+              <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.age}}</td>
+                <td>{{user.hobbies}}</td>
+                <a title="View" rel="/{{user.name}}">View</a>
+              </tr>
+          </table>
+      </div>
+  </div>
