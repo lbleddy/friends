@@ -3,13 +3,14 @@ package com.lbleds.Friends.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import java.rmi.ServerException;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,6 +44,17 @@ public class UserController {
     public User getUserById(@PathVariable Long id){
       Optional<User> optionalEntity = userRepo.findById(id);
       return optionalEntity.orElse(null);
+    }
+    @PostMapping(path = "/users",
+              consumes = MediaType.APPLICATION_JSON_VALUE,
+              produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> addUser(@RequestBody User user) throws ServerException {
+        User user2 = userRepo.save(user);
+        if(user2 == null)
+          throw new ServerException("Error");
+        else {
+          return new ResponseEntity<>(user, HttpStatus.CREATED);
+        }
     }
 
   @Bean

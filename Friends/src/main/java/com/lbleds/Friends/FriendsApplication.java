@@ -33,7 +33,7 @@ public class FriendsApplication {
       hobbies.add("Coding");
 
       User first = new User("Lucas",26,hobbies);
-      userRepo.save(first);
+      //userRepo.save(first);
 
       for(User entry:userRepo.findAll()){
         System.out.println(entry);

@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-user-add',
-  templateUrl: './user-add.component.html',
-  styleUrls: ['./user-add.component.css']
+  template: 'Favorite Color: <input type="text" [formControl] = "favoriteColorControl">'
 })
 export class UserAddComponent {
+
+favoriteColorControl = new FormControl('');
 
 }
