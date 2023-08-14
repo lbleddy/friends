@@ -39,6 +39,7 @@ public class UserController {
     }
 
     @GetMapping("/users/{id}")
+    @CrossOrigin(origins = "http//localhost:4200")
     public User getUserById(@PathVariable Long id){
       Optional<User> optionalEntity = userRepo.findById(id);
       return optionalEntity.orElse(null);

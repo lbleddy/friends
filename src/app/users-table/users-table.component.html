@@ -11,12 +11,12 @@
                   <th>age</th>
                   <th>hobbies</th>
               </tr>
-              <tr *ngFor="let user of users">
+              <tr *ngFor="let user of usersArray">
                 <td>{{user.id}}</td>
                 <td>{{user.name}}</td>
                 <td>{{user.age}}</td>
                 <td>{{user.hobbies}}</td>
-                <a title="View" href="/{{user.id}}">View</a>
+                <a title="View" href="users/{{user.id}}">View</a>
               </tr>
           </table>
       </div>

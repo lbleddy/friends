@@ -1,0 +1,20 @@
+<p>user-detail works!</p>
+<div th:if="${not #lists.isEmpty(users)}" ng-repeat="(key,value) in myObj">
+    <a  class="btn btn-primary" href="#" role="button">Home</a>
+    <h2>Users List</h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>name</th>
+            <th>age</th>
+            <th>hobbies</th>
+        </tr>
+        <tr>
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.hobbies}}</td>
+          <a title="View" href="users/$index">View</a>
+        </tr>
+    </table>
+</div>

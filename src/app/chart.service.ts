@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map } from 'rxjs';
+import { User } from './User';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +9,18 @@ import { Observable } from 'rxjs';
 export class ChartService {
 
   constructor(private http:HttpClient) { }
-  getUsers(): Observable<any> {
-    return this.http.get('http://localhost:8080/users');
+  getUsers(): Observable<User[]> {
+    return (this.http.get<User[]>('http://localhost:8080/users'));
   }
+
+  getUserById(id:number):Observable<any>{
+    const url = 'http://localhost:8080/users/' + id;
+    return this.http.get(url).pipe(
+      map( response => {
+        const data = response;
+      })
+    )
+}
   
   
   private handleError<T>(operation = 'operation' ,
