@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserDetailComponent } from './users-table/user-detail/user-detail.component';
+import { UserAddComponent } from './user-add/user-add.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { UserDetailComponent } from './users-table/user-detail/user-detail.compo
     UsersTableComponent,
     DashboardComponent,
     UserDetailComponent,
+    UserAddComponent,
   ],
   imports: [
     BrowserModule,
