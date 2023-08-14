@@ -15,11 +15,8 @@ export class ChartService {
 
   getUserById(id:number):Observable<any>{
     const url = 'http://localhost:8080/users/' + id;
-    return this.http.get(url).pipe(
-      map( response => {
-        const data = response;
-      })
-    )
+    return this.http.get(url)
+  
 }
   
   
