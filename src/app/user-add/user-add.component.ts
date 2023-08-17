@@ -3,7 +3,8 @@ import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-user-add',
-  template: 'Favorite Color: <input type="text" [formControl] = "favoriteColorControl">'
+  templateUrl: './user-add.component.html',
+  styleUrls: ['./user-add.component.css']
 })
 export class UserAddComponent {
 
