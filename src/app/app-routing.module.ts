@@ -5,13 +5,15 @@ import { UsersTableComponent } from './users-table/users-table.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserDetailComponent } from './users-table/user-detail/user-detail.component';
 import { UserAddComponent } from './user-add/user-add.component';
+import { ToBeDeterminedComponent } from './to-be-determined/to-be-determined.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home',component: DashboardComponent},
   {path: 'users',component: UsersTableComponent},
   {path:'users/detail/:id',component: UserDetailComponent},
-  {path:'users/add',component: UserAddComponent}
+  {path:'users/add',component: UserAddComponent},
+  {path:'other',component:ToBeDeterminedComponent}
 ];
 
 @NgModule({

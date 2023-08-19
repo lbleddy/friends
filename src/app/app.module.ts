@@ -10,6 +10,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { UserDetailComponent } from './users-table/user-detail/user-detail.component';
 import { UserAddComponent } from './user-add/user-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToBeDeterminedComponent } from './to-be-determined/to-be-determined.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     DashboardComponent,
     UserDetailComponent,
     UserAddComponent,
+    ToBeDeterminedComponent,
   ],
   imports: [
     BrowserModule,
