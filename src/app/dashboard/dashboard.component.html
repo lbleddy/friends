@@ -1,6 +1,7 @@
 <p>dashboard works!</p>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Navbar</a>
+    
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -53,5 +54,14 @@
 <div class = "space"></div>
 <a class="btn btn-primary" href="/users/add" role="button">Add User</a>
 <span class="space"></span>
-<a class="btn btn-secondary" role="button">Another One</a>
+<a class="btn btn-secondary" href="/users/other" role="button">Another One</a>
 </div>
+
+<script>$('.trigger_button').click(function(e){
+    // Kill click event:
+    e.stopPropagation();
+    // Toggle dropdown if not already visible:
+    if ($('.dropdown').find('.dropdown-menu').is(":hidden")){
+      $('.dropdown-toggle').dropdown('toggle');
+    }
+  });</script>
