@@ -1,0 +1,31 @@
+.h3 {
+    animation: slidedown 5s infinite;
+    
+}
+.new{
+    animation: slidein 5s infinite;
+}
+
+@keyframes slidein {
+  0% {
+    margin-left: 0%;
+  }
+  50% {
+    margin-left: 300px;
+  }
+  100% {
+    margin-left: 0%;
+  }
+}
+
+@keyframes slidedown {
+    0% {
+        margin-top: 0%
+    }
+    50% {
+        margin-top: 300px;
+    }
+    100% {
+        margin-top: 0%;
+    }
+}
