@@ -11,6 +11,7 @@ import { UserDetailComponent } from './users-table/user-detail/user-detail.compo
 import { UserAddComponent } from './user-add/user-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToBeDeterminedComponent } from './to-be-determined/to-be-determined.component';
+import { SpaceInvadersComponent } from './space-invaders/space-invaders.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ToBeDeterminedComponent } from './to-be-determined/to-be-determined.com
     UserDetailComponent,
     UserAddComponent,
     ToBeDeterminedComponent,
+    SpaceInvadersComponent,
   ],
   imports: [
     BrowserModule,
