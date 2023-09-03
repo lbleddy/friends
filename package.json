@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "aws-deploy": "aws s3 sync dist/angular-friends1/ s3://upload313"
+    
   },
   "private": true,
   "dependencies": {

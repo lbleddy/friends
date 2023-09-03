@@ -1,5 +1,6 @@
 <p>space-invaders works!</p>
-<canvas #canvas style="background: black;"></canvas>
+<canvas #canvas style="background: black;
+width:auto"></canvas>
 <br/>
 <small>Hit start to GO, ←	and → to move and space to shoot</small>
 <p>
@@ -17,3 +18,4 @@
 <button *ngIf="$stopped.value" (click)="$stopped.next(false)">Start</button>
 <button *ngIf="!$stopped.value" (click)="$stopped.next(true)">Stop</button>
 <button *ngIf="lives <= 0" (click)="setUpGame()">Restart</button>
+<a  class="btn btn-primary" href="#" role="button">Home</a>
