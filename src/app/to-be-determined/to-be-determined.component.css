@@ -5,6 +5,9 @@
 .new{
     animation: slidein 5s infinite;
 }
+.starter{
+  visibility: hidden;
+}
 
 @keyframes slidein {
   0% {

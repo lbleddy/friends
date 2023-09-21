@@ -24,4 +24,15 @@ export class ToBeDeterminedComponent {
     
   }
 }
+showImage():void{
+  if(document.getElementById("my-img")?.style.visibility=='visible'){
+  var img = document.getElementById('my-img');
+  img!.style.visibility='hidden';
+  document.getElementById("btn")!.innerHTML = "Show";
+  }
+  else{
+    document.getElementById("my-img")!.style.visibility='visible'
+    document.getElementById("btn")!.innerHTML = "Hide";
+  }
+}
 }
