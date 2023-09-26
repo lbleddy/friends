@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ChartService } from '../chart.service';
+import { User } from '../User';
 
 @Component({
   selector: 'app-user-add',
@@ -7,9 +9,25 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./user-add.component.css']
 })
 export class UserAddComponent {
+  constructor(private chartService:ChartService,
+    ){};
+  submitUser(){
+    this.chartService.addUser(new User(
+      Number.parseInt(this.applyForm.value.id!) ?? '',
+      this.applyForm.value.name ?? '',
+      Number.parseInt(this.applyForm.value.age!)?? '',
+      this.applyForm.value.hobbies!.split(',') ?? ''
+    ));
+  }
 
 favoriteColorControl = new FormControl('');
-
+applyForm = new FormGroup({
+  id: new FormControl(''),
+  name: new FormControl(''),
+  age: new FormControl(''),
+  hobbies: new FormControl('')
+  
+});
 }
 
 

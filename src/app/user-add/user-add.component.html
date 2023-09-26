@@ -3,12 +3,24 @@
     <div class ="container mt-0"></div>
     <a  class="btn btn-primary" href="/users" role="button">User List</a>
     <div class ="container mt-0"></div>
-Favorite Color: <input type="text" [formControl] = "favoriteColorControl">
-<form>
+
+<form [formGroup]="applyForm" (submit)="submitUser()">
     
+<label for="id" class="labels">Id</label>
+<input id="id" type="text" formControlName="id">
+<div></div>
+<label for="name" class="labels">Name</label>
+<input id="name" type="text" formControlName="name">
+<div></div>
+<label for="age" class="labels">Age</label>
+<input id="age" type="text" formControlName="age">
+<div></div>
+<label for="hobbies" class="labels">Hobbies</label>
+<input id="hobbies" type="text" formControlName="hobbies">
 
+<div></div>
 
-
+<button type-="submit" class="btn btn-primary">Submit</button>
 
 
 </form>

@@ -18,6 +18,12 @@ export class ChartService {
     return this.http.get(url)
   
 }
+ addUser(user:User){
+  console.log('User received');
+  this.http.post('http://localhost:8080/users',user);
+ }
+
+ 
   
   
   private handleError<T>(operation = 'operation' ,
