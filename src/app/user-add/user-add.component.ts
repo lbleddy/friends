@@ -17,7 +17,7 @@ export class UserAddComponent {
       this.applyForm.value.name ?? '',
       Number.parseInt(this.applyForm.value.age!)?? '',
       this.applyForm.value.hobbies!.split(',') ?? ''
-    ));
+    )).subscribe((response:any)=>console.log(response));
   }
 
 favoriteColorControl = new FormControl('');

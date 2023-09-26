@@ -45,16 +45,23 @@ public class UserController {
       Optional<User> optionalEntity = userRepo.findById(id);
       return optionalEntity.orElse(null);
     }
-    @PostMapping(path = "/users",
+    @PostMapping(path = "/users/add",
               consumes = MediaType.APPLICATION_JSON_VALUE,
               produces = MediaType.APPLICATION_JSON_VALUE)
+    @CrossOrigin(origins = "http//localhost:4200")
     public ResponseEntity<User> addUser(@RequestBody User user) throws ServerException {
-        User user2 = userRepo.save(user);
+      User user2 = userRepo.save(user);
+        System.out.println("Here");
         if(user2 == null)
           throw new ServerException("Error");
         else {
           return new ResponseEntity<>(user, HttpStatus.CREATED);
         }
+    }
+    
+    public ResponseEntity<Long> deleteUser(long userId){
+      userRepo.deleteById(userId);
+      return new ResponseEntity<>(userId,HttpStatus.ACCEPTED)
     }
 
   @Bean

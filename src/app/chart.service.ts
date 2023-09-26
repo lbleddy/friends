@@ -18,9 +18,9 @@ export class ChartService {
     return this.http.get(url)
   
 }
- addUser(user:User){
+ addUser(user:User):Observable<any>{
   console.log('User received');
-  this.http.post('http://localhost:8080/users',user);
+  return this.http.post('http://localhost:8080/users/add',user);
  }
 
  
