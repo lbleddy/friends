@@ -7,6 +7,7 @@ import { UserDetailComponent } from './users-table/user-detail/user-detail.compo
 import { UserAddComponent } from './user-add/user-add.component';
 import { ToBeDeterminedComponent } from './to-be-determined/to-be-determined.component';
 import { SpaceInvadersComponent } from './space-invaders/space-invaders.component';
+import { UserDeleteComponent } from './users-table/user-delete/user-delete.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'users/detail/:id',component: UserDetailComponent},
   {path:'users/add',component: UserAddComponent},
   {path:'other',component:ToBeDeterminedComponent},
-  {path:'other2',component:SpaceInvadersComponent}
+  {path:'other2',component:SpaceInvadersComponent},
+  {path:'users/delete/:id',component: UserDeleteComponent}
 ];
 
 @NgModule({
