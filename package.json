@@ -8,7 +8,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "aws-deploy": "aws s3 sync dist/angular-friends1/ s3://upload313"
-    
   },
   "private": true,
   "dependencies": {
@@ -17,6 +16,7 @@
     "@angular/compiler": "^16.1.0",
     "@angular/core": "^16.1.0",
     "@angular/forms": "^16.1.0",
+    "@angular/http": "^7.2.16",
     "@angular/platform-browser": "^16.1.0",
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",

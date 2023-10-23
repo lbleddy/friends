@@ -9,10 +9,7 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./users-table.component.css']
 })
 export class UsersTableComponent implements OnInit {
-
   
-
-
   public usersArray: User[] = [];
   constructor(private chartService:ChartService,
     ){};
@@ -21,7 +18,19 @@ export class UsersTableComponent implements OnInit {
       this.chartService.getUsers().subscribe(res => {
         this.usersArray = res;
       })
-  }}
+      
+  }
+  myFunc(){
+    this.chartService.deleteUser(Number.parseInt(document.getElementById("id")!.innerHTML)).subscribe()
+    
+  
+    
+
+  }
+
+  
+  
+}
     
    
 

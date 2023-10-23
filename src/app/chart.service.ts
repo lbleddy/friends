@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParamsOptions } from '@angular/common/http';
+
 import { Observable, catchError, map } from 'rxjs';
 import { User } from './User';
 
@@ -10,6 +11,7 @@ export class ChartService {
 
   constructor(private http:HttpClient) { }
   getUsers(): Observable<User[]> {
+    console.log('here in getUsers')
     return (this.http.get<User[]>('http://localhost:8080/users'));
   }
 
@@ -19,10 +21,16 @@ export class ChartService {
   
 }
  addUser(user:User):Observable<any>{
-  console.log('User received');
-  return this.http.post('http://localhost:8080/users/add',user);
- }
+  var observable:Observable<any>;
+  return this.http.post('http://localhost:8080/users/add',user.name)
 
+ //...errors if
+ }
+deleteUser(id:number):Observable<any>{
+  console.log("here in service");
+  console.log(id);
+  return this.http.delete('http://localhost:8080/users/'+id);
+}
  
   
   

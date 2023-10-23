@@ -12,13 +12,14 @@
                   <th>hobbies</th>
               </tr>
               <tr *ngFor="let user of usersArray">
-                <td>{{user.id}}</td>
+                <td id="id">{{user.id}}</td>
                 <td>{{user.name}}</td>
                 <td>{{user.age}}</td>
                 <td>{{user.hobbies}}</td>
                 <a title="View" href="users/detail/{{user.id}}">View</a>
                 <div class="space"></div>
-                <a title="Delete" href="users/delete/{{user.id}}">Delete</a>
+                <a title="Delete" class="btn btn-primary" id="btn1"
+                (click)="myFunc()">Delete</a>
               </tr>
           </table>
       </div>

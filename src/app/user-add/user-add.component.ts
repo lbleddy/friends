@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ChartService } from '../chart.service';
 import { User } from '../User';
+import { count } from 'rxjs';
 
 @Component({
   selector: 'app-user-add',
@@ -12,15 +13,27 @@ export class UserAddComponent {
   constructor(private chartService:ChartService,
     ){};
   submitUser(){
-    this.chartService.addUser(new User(
-      Number.parseInt(this.applyForm.value.id!) ?? '',
-      this.applyForm.value.name ?? '',
-      Number.parseInt(this.applyForm.value.age!)?? '',
-      this.applyForm.value.hobbies!.split(',') ?? ''
-    )).subscribe((response:any)=>console.log(response));
+   
+    var inputValue = (<HTMLInputElement>document.getElementById('id')).value;
+    var inputValue2 = (<HTMLInputElement>document.getElementById('name')).value;
+    var inputValue3 = (<HTMLInputElement>document.getElementById('age')).value;
+    var inputValue4 = (<HTMLInputElement>document.getElementById('hobbies')).value;
+    console.log(inputValue)
+    var user:User = new User(
+     
+    )
+    user.id = Number.parseInt(inputValue)
+    user.name = inputValue2
+    user.age = inputValue3
+    user.hobbies = inputValue4
+    console.log(user)
+    this.chartService.addUser(user).subscribe()
+
+    document.getElementById('add')!.style.visibility = 'visible';
+    
   }
 
-favoriteColorControl = new FormControl('');
+
 applyForm = new FormGroup({
   id: new FormControl(''),
   name: new FormControl(''),

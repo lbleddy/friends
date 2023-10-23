@@ -4,13 +4,13 @@
     <a  class="btn btn-primary" href="/users" role="button">User List</a>
     <div class ="container mt-0"></div>
 
-<form [formGroup]="applyForm" (submit)="submitUser()">
+<form [formGroup]="applyForm" (ngSubmit)="submitUser()" novalidate>
     
 <label for="id" class="labels">Id</label>
-<input id="id" type="text" formControlName="id">
+<input id="id" type="text" class="form-control" formControlName="id">
 <div></div>
 <label for="name" class="labels">Name</label>
-<input id="name" type="text" formControlName="name">
+<input id="name" class="form-control"type="text" formControlName="name">
 <div></div>
 <label for="age" class="labels">Age</label>
 <input id="age" type="text" formControlName="age">
@@ -20,7 +20,7 @@
 
 <div></div>
 
-<button type-="submit" class="btn btn-primary">Submit</button>
-
+<button type-="onSubmit" class="btn btn-primary">Submit</button>
+<div id="add" class="added">User Created</div>
 
 </form>

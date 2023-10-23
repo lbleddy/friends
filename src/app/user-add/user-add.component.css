@@ -5,4 +5,7 @@
 .labels {
   margin: 10px;
 }
-  
+.added {
+  visibility: hidden;
+  color: green;
+}
